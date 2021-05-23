@@ -132,7 +132,7 @@ void rethink_grasp_TOY_BLOCK_ID(int query_code, int grasp_option,
 void rethink_grasp_query(int object_id, int query_code, int grasp_option,
         object_manipulation_properties::objectManipulationQueryResponse&response) {
     switch (object_id) {
-        case ObjectIdCodes::TOY_BLOCK_ID:
+        case ObjectIdCodes::COKE_CAN_UPRIGHT:
             rethink_grasp_TOY_BLOCK_ID(query_code, grasp_option, response);
             break;
             //case OBJECT_ID: add more cases here, for each object to be grasped by rethink gripper
