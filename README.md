@@ -38,26 +38,38 @@ export ROS_HOSTNAME=localhost
 export ROS_MASTER_URI=http://localhost:11311
 ```
 
-## To run the simulation, please follow the step: 
+## To run the simulation, please open 3 terminals and follow the step: 
 
-#### Launch Baxter urdf model into Gazebo simulator: 
+#### Terminal 1: Launch Baxter urdf model into Gazebo simulator: 
 ```
+cd ~/grabcoke_ws/
+./baxter.sh sim
+export ROS_HOSTNAME=localhost
+export ROS_MASTER_URI=http://localhost:11311
 roslaunch baxter_gazebo baxter_world.launch
 ```
 
-#### Append table and coke can sdf model into Gazebo simulator: 
+#### Terminal 2: Append table and coke can sdf model into Gazebo simulator: 
 ```
+cd ~/grabcoke_ws/
+./baxter.sh sim
+export ROS_HOSTNAME=localhost
+export ROS_MASTER_URI=http://localhost:11311
 roslaunch exmpl_models add_table.launch
 roslaunch exmpl_models add_can.launch
 ```
 
-#### Launch object grabber action server node: 
+#### Terminal 2: Launch object grabber action server node: 
 ```
 roslaunch baxter_launch_files baxter_object_grabber_nodes.launch
 ```
 
-#### Run object grabber action client to perform coke can side approach grasping: 
+#### Terminal 3: Run object grabber action client to perform coke can side approach grasping: 
 ```
+cd ~/grabcoke_ws/
+./baxter.sh sim
+export ROS_HOSTNAME=localhost
+export ROS_MASTER_URI=http://localhost:11311
 rosrun object_grabber example_object_grabber_action_client
 ```
 
