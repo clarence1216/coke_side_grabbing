@@ -123,8 +123,8 @@ bool CartTrajPlanner::cartesian_path_planner(Eigen::Affine3d a_flange_start, Eig
 
     //now, jsp is deleted, but optimal_path lives on:
     cout << "resulting solution path: " << endl;
-    // changed
     for (int ilayer = 0; ilayer < nlayers; ilayer++) {
+        // hard-coded rotate gripper pose
         if (optimal_path[ilayer][6] < 0) {
             optimal_path[ilayer][6] += 1.5708;
         }
@@ -148,7 +148,7 @@ bool CartTrajPlanner::cartesian_path_planner(Vectorq7x1 q_start, Eigen::Affine3d
     Eigen::VectorXd node;
     Eigen::Affine3d a_flange_des, a_flange_start;
     Eigen::Matrix3d R_des = a_flange_end.linear();
-    //
+    // hard-coded rotate gripper pose
     if (q_start[6] < 0) {
         q_start[6] -= 1.5708;
     }
@@ -239,7 +239,7 @@ bool CartTrajPlanner::cartesian_path_planner(Vectorq7x1 q_start, Eigen::Affine3d
     //now, jsp is deleted, but optimal_path lives on:
     cout << "resulting solution path: " << endl;
     for (int ilayer = 0; ilayer < nlayers; ilayer++) {
-        if (optimal_path[ilayer][6] < 0) {
+        if (optimal_path[ilayer][6] < 0) { // hard-coded rotate gripper pose
             optimal_path[ilayer][6] += 1.5708;
         }
         else {
@@ -606,7 +606,7 @@ bool CartTrajPlanner::jspace_path_planner_to_affine_goal(Vectorq7x1 q_start, Eig
             qx_end = single_layer_nodes[i];
         }
     }
-    // rotate gripper pose
+    // hard-coded rotate gripper pose
     if (qx_end[6] < 0) {
         qx_end[6] += 1.5708;
     } 
