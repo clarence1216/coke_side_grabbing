@@ -38,13 +38,10 @@ CartTrajPlanner::CartTrajPlanner() // optionally w/ args, e.g.
     R_gripper_horiz_.col(2) = tool_b_des_horiz_;
     
     jspace_planner_weights_.resize(7);
-    jspace_planner_weights_[0] = 2;
-    //penalize shoulder lift more:
-    jspace_planner_weights_[1] = 10;
-    //humerus:
-    jspace_planner_weights_[2] = 3;
-    //penalize elbow and wrist less
-    jspace_planner_weights_[3] = 0.5;
+    jspace_planner_weights_[0] = 2;    
+    jspace_planner_weights_[1] = 10;    //penalize shoulder lift more:
+    jspace_planner_weights_[2] = 3;     //humerus:
+    jspace_planner_weights_[3] = 0.5;   //penalize elbow and wrist less
     jspace_planner_weights_[4] = 0.2;
     jspace_planner_weights_[5] = 0.2;
     jspace_planner_weights_[6] = 0.2;    
