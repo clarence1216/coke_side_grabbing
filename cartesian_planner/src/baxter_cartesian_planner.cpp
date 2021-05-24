@@ -126,10 +126,10 @@ bool CartTrajPlanner::cartesian_path_planner(Eigen::Affine3d a_flange_start, Eig
     // changed
     for (int ilayer = 0; ilayer < nlayers; ilayer++) {
         if (optimal_path[ilayer][6] < 0) {
-            optimal_path[ilayer][6] = optimal_path[ilayer][6] + 1.5708;
+            optimal_path[ilayer][6] += 1.5708;
         }
         else {
-            optimal_path[ilayer][6] = optimal_path[ilayer][6] - 1.5708;
+            optimal_path[ilayer][6] -= 1.5708;
         }
         cout << "ilayer: " << ilayer << " node: " << optimal_path[ilayer].transpose() << endl;
     }
@@ -150,10 +150,10 @@ bool CartTrajPlanner::cartesian_path_planner(Vectorq7x1 q_start, Eigen::Affine3d
     Eigen::Matrix3d R_des = a_flange_end.linear();
     //
     if (q_start[6] < 0) {
-        q_start[6] = q_start[6] - 1.5708;
+        q_start[6] -= 1.5708;
     }
     else {
-        q_start[6] = q_start[6] + 1.5708;
+        q_start[6] += 1.5708;
     }
     //
     a_flange_start = baxter_fwd_solver_.fwd_kin_flange_wrt_torso_solve(q_start);
@@ -240,10 +240,10 @@ bool CartTrajPlanner::cartesian_path_planner(Vectorq7x1 q_start, Eigen::Affine3d
     cout << "resulting solution path: " << endl;
     for (int ilayer = 0; ilayer < nlayers; ilayer++) {
         if (optimal_path[ilayer][6] < 0) {
-            optimal_path[ilayer][6] = optimal_path[ilayer][6] + 1.5708;
+            optimal_path[ilayer][6] += 1.5708;
         }
         else {
-            optimal_path[ilayer][6] = optimal_path[ilayer][6] - 1.5708;
+            optimal_path[ilayer][6] -= 1.5708;
         }
         cout << "ilayer: " << ilayer << " node: " << optimal_path[ilayer].transpose() << endl;
     }
@@ -608,10 +608,10 @@ bool CartTrajPlanner::jspace_path_planner_to_affine_goal(Vectorq7x1 q_start, Eig
     }
     // rotate gripper pose
     if (qx_end[6] < 0) {
-        qx_end[6] = qx_end[6] + 1.5708;
+        qx_end[6] += 1.5708;
     } 
     else {
-        qx_end[6] = qx_end[6] - 1.5708;
+        qx_end[6] -= 1.5708;
     }
     optimal_path.push_back(qx_end);
     return true;
