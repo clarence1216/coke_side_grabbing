@@ -38,7 +38,7 @@ export ROS_HOSTNAME=localhost
 export ROS_MASTER_URI=http://localhost:11311
 ```
 
-## To run the simulation, please follow the step: : 
+## To run the simulation, please follow the step: 
 
 #### Launch Baxter urdf model into Gazebo simulator: 
 ```
@@ -56,7 +56,7 @@ roslaunch exmpl_models add_can.launch
 roslaunch baxter_launch_files baxter_object_grabber_nodes.launch
 ```
 
-#### Run object grabber action client to perform coke can side approach grasping; 
+#### Run object grabber action client to perform coke can side approach grasping: 
 ```
 rosrun object_grabber example_object_grabber_action_client
 ```
@@ -64,6 +64,6 @@ rosrun object_grabber example_object_grabber_action_client
 ## To download the original repo: learning_ros_noetic & learning_ros_external_packages_noetic, please run: 
 
 ```
-git clone https://github.com/rojas70/learning_ros_noetic.git`
-git clone https://github.com/rojas70/learning_ros_external_pkgs_noetic.git`
+git clone https://github.com/rojas70/learning_ros_noetic.git
+git clone https://github.com/rojas70/learning_ros_external_pkgs_noetic.git
 ```
