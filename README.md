@@ -2,6 +2,10 @@
 
 ## Demo video: https://youtu.be/nHb8g3WbcAM
 
+## System requirements
+Operating system: Linux Ubuntu 20.04/Virtual Machine
+Software required: ROS Noetic, Gazebo, Rviz
+
 ## To start, please follow the step: 
 
 #### Initial setup for create a new workspace (grabcoke_ws): 
